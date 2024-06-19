@@ -58,7 +58,7 @@ git clone https://github.com/KhulnaSoft/FastNode.git
 ```
 cd FastNode
 ```
-3. Create a copy of .env.example , and name it .env. Repeat this step for all the three modules - autonode, yolo, ocr
+3. Create a copy of .env.example , and name it .env. Repeat this step for all the three modules - fastnode, yolo, ocr
 
 4. Ensure that Docker is installed on your system. You can download and install it from [here](https://docs.docker.com/get-docker/).
 
@@ -101,10 +101,10 @@ FastNode operates based on a site-graph that defines the navigation and actions 
 
      #### Sending a Request to FastNode
 
-     To automate a task with FastNode, you will use the /api/autonode/initiate endpoint. This endpoint accepts a JSON payload that specifies the task's objective, the path to the site-graph JSON file, the root node to start traversal, and the URL of the website you wish to interact with.
+     To automate a task with FastNode, you will use the /api/fastnode/initiate endpoint. This endpoint accepts a JSON payload that specifies the task's objective, the path to the site-graph JSON file, the root node to start traversal, and the URL of the website you wish to interact with.
 
      #### Request Structure
-     Here is the structure of the JSON payload you need to send to the `/api/autonode/initiate` endpoint:
+     Here is the structure of the JSON payload you need to send to the `/api/fastnode/initiate` endpoint:
 
      ```
      {
@@ -120,7 +120,7 @@ FastNode operates based on a site-graph that defines the navigation and actions 
      {
         "site_url": "https://app.apollo.io/#/login",
         "objective": "Find the list of 20 ceo, cto of tech companies in san francisco. Login into apollo using the creds example@example.com and password dummypassword@123",
-        "graph_path": "autonode/site_trees/apollo.json"
+        "graph_path": "fastnode/site_trees/apollo.json"
         "planner_prompt": "apollo"
      }
      
@@ -137,7 +137,7 @@ FastNode operates based on a site-graph that defines the navigation and actions 
 
      ```
      curl -X 'POST' \
-         'http://localhost:8001/api/autonode/initiate' \
+         'http://localhost:8001/api/fastnode/initiate' \
          -H 'accept: application/json' \
          -H 'Content-Type: application/json' \
          -d '{
@@ -223,8 +223,8 @@ Screenshots at every node for web element detection is stored in requests direct
 For use-cases which require downloading output, downloadable content (like output in apollo) needs to be stored either locally or remotely.
 
 1. Storing Screenshots & Downloads Remotely
- - In your autonode/.env file, configure AWS keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from your AWS console
- - In autonode/services/autonode.py, uncomment the following snippet at line 35, 
+ - In your fastnode/.env file, configure AWS keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from your AWS console
+ - In fastnode/services/fastnode.py, uncomment the following snippet at line 35, 
 
  ```
     # Uncomment If you have aws account and want to store result in your AWS S3
@@ -237,13 +237,13 @@ For use-cases which require downloading output, downloadable content (like outpu
  ```
     s3_client=None
  ```
- - In autonode/utils/screenshot_generator.py uncomment this on line 18,
+ - In fastnode/utils/screenshot_generator.py uncomment this on line 18,
 
  ```
     # Uncomment If you have aws account and want to store result in your AWS S3
     s3_client.upload_file(file_path=screenshot_filename)
  ```
- - In autonode/nodes/download.py uncomment this on line 44
+ - In fastnode/nodes/download.py uncomment this on line 44
  
  ```
     # Uncomment If you have aws account and want to store result in your AWS S3
@@ -252,7 +252,7 @@ For use-cases which require downloading output, downloadable content (like outpu
 
  2. Storing Screenshots & Downloaded files locally
  - By default, the screenshots and downloaded output are stored locally during execution and are deleted as the task completes or fails
- - In autonode/worker.py comment this finally block on line 79 to persist screenshots locally,
+ - In fastnode/worker.py comment this finally block on line 79 to persist screenshots locally,
  ```
     finally:
             # Comment if you don't want to delete screenshots locally
