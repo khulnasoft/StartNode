@@ -25,7 +25,7 @@ class WebAutomationHelper:
 
     async def type_str_on_page(self, page, text: str, system: str):
         if system == "Linux":
-            await page.keyboard.type("AutoNode", delay=100)
+            await page.keyboard.type("FastNode", delay=100)
             await page.keyboard.down('Control')
             await page.keyboard.press('A')
             await page.keyboard.up('Control')
@@ -33,7 +33,7 @@ class WebAutomationHelper:
 
             await page.keyboard.type(text, delay=200)
         elif system == "mac":
-            await page.keyboard.type("AutoNode", delay=100)
+            await page.keyboard.type("FastNode", delay=100)
             await page.keyboard.down('Meta')
             await page.keyboard.press('A')
             await page.keyboard.up('Meta')
@@ -45,7 +45,7 @@ class WebAutomationHelper:
 
     async def type_multiple_elements_on_page(self, page, text_list: list, system: str, separation_key: str = "Enter"):
         if system == "Linux":
-            await page.keyboard.type("AutoNode", delay=100)
+            await page.keyboard.type("FastNode", delay=100)
             await page.keyboard.down('Control')
             await page.keyboard.press('A')
             await page.keyboard.up('Control')
@@ -56,7 +56,7 @@ class WebAutomationHelper:
                 await page.keyboard.press(separation_key)
 
         elif system == "mac":
-            await page.keyboard.type("AutoNode", delay=100)
+            await page.keyboard.type("FastNode", delay=100)
             await page.keyboard.down('Meta')
             await page.keyboard.press('A')
             await page.keyboard.up('Meta')

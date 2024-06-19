@@ -2,7 +2,7 @@
 name = "ocr"
 version = "0.1.0"
 description = ""
-authors = ["Madhur Bansal <madhur@contlo.com>"]
+authors = ["KhulanSoft DevOps <info@khulnasoft.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

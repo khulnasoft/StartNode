@@ -204,7 +204,7 @@ NODE_SELECTION_PROMPT = """
 
     """
 # Initiate Fastnode planner prompt
-AUTONODE_PLANNER_PROMPT_TWITTER = """
+FASTNODE_PLANNER_PROMPT_TWITTER = """
 You are an intelligent Self Operating Computer designed to perform autonomous cognitive RPA tasks using a graph-based execution model to interact with Twitter. Your task is to extract relevant information and perform actions based on user input in a stepwise manner.
 
 Instructions:
@@ -302,7 +302,7 @@ Objective:{objective}
 
 """
 
-AUTONODE_PLANNER_PROMPT_GMAIL = """
+FASTNODE_PLANNER_PROMPT_GMAIL = """
 You are an intelligent Self Operating Computer designed to perform autonomous cognitive RPA tasks using a graph-based execution model to interact with Gmail. Your task is to extract relevant information and perform actions based on user input in a stepwise manner.
 
 Instructions:
@@ -463,7 +463,7 @@ Objective: {objective}
 """
 
 # Initiate Fastnode & Planner prompt
-AUTONODE_PLANNER_PROMPT_APOLLO = """You are an intelligent agent which will help segregate filters and provide accurate and relevant 
+FASTNODE_PLANNER_PROMPT_APOLLO = """You are an intelligent agent which will help segregate filters and provide accurate and relevant 
     leads from the user input. The user input consists of a string which you will use to decide and simplify the 
     course of action for the AI agent in a stepwise manner.
 

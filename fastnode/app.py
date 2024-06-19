@@ -16,4 +16,4 @@ app.include_router(fastnode_router, prefix="/api/fastnode")
 
 @app.get("/health")
 async def health_check():
-    return {"status": "AutoNode is Running"}
+    return {"status": "FastNode is Running"}

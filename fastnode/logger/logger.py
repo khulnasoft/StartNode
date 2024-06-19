@@ -32,7 +32,7 @@ class SingletonMeta(type):
 
 
 class Logger(metaclass=SingletonMeta):
-    def __init__(self, logger_name='AutoNode', log_level=logging.DEBUG):
+    def __init__(self, logger_name='FastNode', log_level=logging.DEBUG):
         if not hasattr(self, 'logger'):
             self.logger = logging.getLogger(logger_name)
             self.logger.setLevel(log_level)
@@ -78,5 +78,5 @@ class Logger(metaclass=SingletonMeta):
             self.logger.critical(*args)
 
 
-logger = Logger('AutoNode')
+logger = Logger('FastNode')
 
