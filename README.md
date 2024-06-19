@@ -1,4 +1,4 @@
-<p><b>Follow FastAGI </b></p>
+## Follow FastAGI
 
 <p>
 <a href="https://twitter.com/_fastAGI" target="blank">
@@ -10,14 +10,6 @@
 <img src="https://img.shields.io/discord/1107593006032355359?label=Join%20FastAGI&logo=discord&style=social" alt="Join FastAGI Discord Community"/>
 </a>
 <a href="https://www.youtube.com/@_fastagi" target="_blank"><img src="https://img.shields.io/twitter/url?label=Youtube&logo=youtube&style=social&url=https://github.com/KhulnaSoft/FastAGI"/></a>
-</p>
-
-<p align="center"><b>Connect with the Creator </b></p>
-
-<p align="center">
-<a href="https://twitter.com/khulnasoft" target="blank">
-<img src="https://img.shields.io/twitter/follow/khulnasoft?label=Follow: khulnasoft&style=social" alt="Follow khulnasoft"/>
-</a>
 </p>
 
 <p><b>Share This Repository</b></p>
