@@ -1,6 +1,6 @@
-<p align="center"><b>Follow FastAGI </b></p>
+<p><b>Follow FastAGI </b></p>
 
-<p align="center">
+<p>
 <a href="https://twitter.com/_fastAGI" target="blank">
 <img src="https://img.shields.io/twitter/follow/_fastAGI?label=Follow: _fastAGI&style=social" alt="Follow _fastAGI"/>
 </a>
@@ -15,14 +15,14 @@
 <p align="center"><b>Connect with the Creator </b></p>
 
 <p align="center">
-<a href="https://twitter.com/ishaanbhola" target="blank">
-<img src="https://img.shields.io/twitter/follow/ishaanbhola?label=Follow: ishaanbhola&style=social" alt="Follow ishaanbhola"/>
+<a href="https://twitter.com/khulnasoft" target="blank">
+<img src="https://img.shields.io/twitter/follow/khulnasoft?label=Follow: khulnasoft&style=social" alt="Follow khulnasoft"/>
 </a>
 </p>
 
-<p align="center"><b>Share This Repository</b></p>
+<p><b>Share This Repository</b></p>
 
-<p align="center">
+<p>
 
 <a href="https://x.com/intent/post?text=Check+out+Fastnode+by+FastAGI+%3A+A+Self-Learnable+Engine+for+Cognitive+GUI+Automation+&url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FFastNode&hashtags=Fastnode%2CFastAGI%2CAGI" target="blank">
 <img src="https://img.shields.io/twitter/follow/_fastAGI?label=Share Repo on Twitter&style=social" alt="Follow _fastAGI"/></a> 
