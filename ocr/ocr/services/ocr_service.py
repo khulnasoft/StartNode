@@ -1,7 +1,7 @@
 import base64
 from typing import List
 import requests
-from startnode.logger.logger import logger
+from fastnode.logger.logger import logger
 from ocr.ocr.configs.settings import OcrConfig
 from ocr.ocr.services.easy_ocr import EasyOcr
 from ocr.ocr.utils.box_utils import convert_units_of_bbox, get_point

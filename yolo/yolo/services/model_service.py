@@ -6,7 +6,7 @@ from sahi import AutoDetectionModel
 from sahi.predict import get_sliced_prediction
 from ultralytics import YOLO
 
-from startnode.logger.logger import logger
+from fastnode.logger.logger import logger
 from yolo.yolo.configs.settings import YoloConfig as config
 from yolo.yolo.enums.model_type import ModelType
 from numpy import asarray

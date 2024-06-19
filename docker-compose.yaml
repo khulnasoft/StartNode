@@ -4,11 +4,11 @@ services:
     volumes:
       - "./:/app"
     build:
-      context: startnode
+      context: fastnode
       target: development
     networks:
       - verk_network
-    entrypoint: ["startnode/entrypoint.sh"]
+    entrypoint: ["fastnode/entrypoint.sh"]
     ports:
       - "8001:8001"
 
@@ -41,7 +41,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=startnode
+      - POSTGRES_DB=fastnode
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     networks:
@@ -53,7 +53,7 @@ services:
     volumes:
       - "./:/app"
     build:
-      context: startnode
+      context: fastnode
       target: development
     depends_on:
       - redis
@@ -62,7 +62,7 @@ services:
       - verk_network
     deploy:
       replicas: 1
-    entrypoint: ["celery", "-A", "startnode.worker", "worker", "--loglevel=info"]
+    entrypoint: ["celery", "-A", "fastnode.worker", "worker", "--loglevel=info"]
 
   redis:
     image: "redis/redis-stack-server:latest"
