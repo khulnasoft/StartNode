@@ -1,4 +1,4 @@
-name: Build and Publish Docker Image
+name: Docker Compose Build and Up
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-publish:
+  build-and-up:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,18 +36,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-image:latest  # Change this to your Docker image name
-          file: ./path/to/your/Dockerfile  # Adjust if you are using a specific Dockerfile
+      - name: Build and run Docker Compose
+        run: docker-compose -f docker-compose.yaml up --build -d
 
-      - name: Docker Compose Build
-        run: docker-compose -f docker-compose.yml build
+      - name: Run tests (optional)
+        run: docker-compose -f docker-compose.yaml exec <service-name> <test-command>  # Replace <service-name> and <test-command> with your service name and test command
 
-      - name: Push Docker Compose Service Images
-        run: |
-          docker-compose -f docker-compose.yaml push
+      - name: Tear down Docker Compose
+        if: always()
+        run: docker-compose -f docker-compose.yaml down
 
