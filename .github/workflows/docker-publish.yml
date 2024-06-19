@@ -49,5 +49,5 @@ jobs:
 
       - name: Push Docker Compose Service Images
         run: |
-          docker-compose -f docker-compose.yml push
+          docker-compose -f docker-compose.yaml push
 
