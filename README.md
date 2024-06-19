@@ -1,4 +1,4 @@
-## FastNode: A Neuro-Graphic Self-Learnable Engine for Cognitive GUI Automation
+## FastNode: A Neuro-Graphic Self-Learnable Engine
 
 <p>
 <a href="https://twitter.com/_fastAGI" target="blank">
