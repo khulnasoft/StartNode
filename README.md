@@ -37,8 +37,6 @@ FastNode is a self-operating computer system designed to automate web interactio
 
 ## Installation
 
-[![FastNode Installation video](https://fastagi.com/wp-content/uploads/2024/06/Youtube-Thumbnail.png)](https://www.youtube.com/watch?v=z5PUAep3_3o)
-
 To get started with FastNode, you need to have Python installed on your system. Follow these steps to install FastNode:
 
 1. Open your terminal and clone the FastAGI repository.
