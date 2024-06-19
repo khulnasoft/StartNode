@@ -1,0 +1,58 @@
+name: Docker Space Build and Up
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not `main`
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  build-and-up:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Clean up Docker to free space
+        run: |
+          docker system prune -f
+          docker volume prune -f
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build and run Docker Compose
+        run: docker-compose -f docker-compose.yaml up --build -d
+
+      - name: Run tests (optional)
+        run: docker-compose -f docker-compose.yaml exec <service-name> <test-command>  # Replace <service-name> and <test-command> with your service name and test command
+
+      - name: Tear down Docker Compose
+        if: always()
+        run: docker-compose -f docker-compose.yaml down
+
+      - name: Clean up Docker to free space (afterwards)
+        if: always()
+        run: |
+          docker system prune -f
+          docker volume prune -f
