@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "startnode"
+version = "0.1.0"
+description = "StartNode-Graphics Self-Lerning Engine for Cognitive GUI"
+authors = ["Forti Shield <dev.sulaiman@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+kombu = "5.3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
