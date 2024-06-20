@@ -1,11 +1,12 @@
 [tool.poetry]
+package-mode = false
 name = "fastnode"
 version = "1.0.0"
 description = ""
 authors = ["Manandeep Singh <manandeep@contlo.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.11.9"
+python = "^3.10.13"
 newrelic = "^9.9.0"
 fastapi = "^0.110.0"
 requests = "^2.31.0"
