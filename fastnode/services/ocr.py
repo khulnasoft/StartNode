@@ -29,7 +29,8 @@ class OCRService:
             data["ocr_result"] = None
             logger.error(f"Error in ocr_image : {e}")
 
-    def concatenate_all_text(self, ocred_data):
+    @staticmethod
+    def concatenate_all_text(ocred_data):
         text = ""
         for data in ocred_data:
             text += data["text"] + " "

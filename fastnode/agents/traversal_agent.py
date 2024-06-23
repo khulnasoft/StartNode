@@ -41,7 +41,8 @@ class TraversalAgent(BaseAgent):
 
         raise Exception("Depth exceeded, can't find the next node")
 
-    def find_most_similar_node(self, node_to_select, graph_node, graph_dict, threshold_similarity):
+    @staticmethod
+    def find_most_similar_node(node_to_select, graph_node, graph_dict, threshold_similarity):
         highest_similarity, return_node = -10, None
 
         for child_id in graph_node.adjacent_to:

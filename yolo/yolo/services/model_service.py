@@ -93,6 +93,7 @@ class ModelService:
         logger.info(f"Yolo Remote Prediction Result {result}")
         return result['received_data']
 
-    def _image_to_base64(self, image):
+    @staticmethod
+    def _image_to_base64(image):
         return base64.b64encode(image).decode('utf-8')
 

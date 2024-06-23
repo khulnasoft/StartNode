@@ -24,7 +24,8 @@ class ImageHelper:
 
         return results
 
-    def crop_image(self, image_path, result, folder_path):
+    @staticmethod
+    def crop_image(image_path, result, folder_path):
         try:
             image = Image.open(image_path)
             x1, y1, x2, y2 = result["bbox"]
