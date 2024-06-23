@@ -11,7 +11,8 @@ class Graph:
         self.node_factory = NodeFactory()
         self.graph_dict = self.build_graph_dict()
 
-    def _read_graph(self, graph_path: str):
+    @staticmethod
+    def _read_graph(graph_path: str):
         with open(graph_path, "r") as graph_file:
             graph_json = json.load(graph_file)
         return graph_json

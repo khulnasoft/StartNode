@@ -9,7 +9,8 @@ class ScreenshotGenerator:
     def __init__(self):
         pass
 
-    def run(self, db_session, s3_client, web_automator, step, request_id, request_dir, loop):
+    @staticmethod
+    def run(db_session, s3_client, web_automator, step, request_id, request_dir, loop):
         screenshot_filename = NamingHelper.screenshot_file_name_generation(step)
         screenshot_filename = os.path.join(request_dir, screenshot_filename)
         loop.run_until_complete(web_automator.take_screenshot(screenshot_filename))

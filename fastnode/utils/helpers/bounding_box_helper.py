@@ -28,7 +28,8 @@ class BoundingBoxHelper:
                 filtered_bboxs.append([obj, distance])
         return filtered_bboxs
 
-    def get_middle_of_a_bbox(self, bbox, screenshot_path, percentage_x=0.3, percentage_y=0.5):
+    @staticmethod
+    def get_middle_of_a_bbox(bbox, screenshot_path, percentage_x=0.3, percentage_y=0.5):
         """Function to get the middle point of a bounding box
 
         Args:
@@ -52,7 +53,8 @@ class BoundingBoxHelper:
 
         return [x, y]
 
-    def euclidean_distance(self, point1, point2):
+    @staticmethod
+    def euclidean_distance(point1, point2):
         """Calculate the Euclidean distance between two points in a 2D space.
 
         Parameters:
@@ -69,7 +71,8 @@ class BoundingBoxHelper:
         distance = float(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2))
         return distance
 
-    def which_bounding_box(self, clickable_objects_, click_location_, screenshot_path) -> [int]:
+    @staticmethod
+    def which_bounding_box(clickable_objects_, click_location_, screenshot_path) -> [int]:
         """Returns the index of the bounding box in which the point (x,y) lies
 
         Args:

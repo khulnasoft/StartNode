@@ -51,7 +51,8 @@ class BoundingBoxService:
             return highest_similarity_bbox
         return [None, None]
 
-    def filter_previous_node(self, filtered_bbox, previous_node, screenshot_path):
+    @staticmethod
+    def filter_previous_node(filtered_bbox, previous_node, screenshot_path):
         if previous_node:
             obj_ids = BoundingBoxHelper().which_bounding_box(filtered_bbox, previous_node.location, screenshot_path)
             prev_element_name = previous_node.type_value if previous_node.type_value else previous_node.node_name
@@ -85,7 +86,8 @@ class BoundingBoxService:
 
         return highest_similarity_bbox
 
-    def calculate_similarity(self, string1, string2, distance):
+    @staticmethod
+    def calculate_similarity(string1, string2, distance):
         print(f"Similarity {string1} {string2} {distance}")
         if string1 and string2:
             similarity = (0.7 * jellyfish.jaro_similarity(string1, string2)) + (0.3 * (1 - distance))

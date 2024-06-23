@@ -49,7 +49,8 @@ class Logger(metaclass=SingletonMeta):
             console_handler.setFormatter(formatter)
             self.logger.addHandler(console_handler)
 
-    def _make_custom_log_record(self, name, level, fn, lno, msg, args, exc_info, func=None, extra=None, sinfo=None):
+    @staticmethod
+    def _make_custom_log_record(name, level, fn, lno, msg, args, exc_info, func=None, extra=None, sinfo=None):
         return CustomLogRecord(name, level, fn, lno, msg, args, exc_info, func=func, extra=extra, sinfo=sinfo)
 
     def debug(self, message, *args):

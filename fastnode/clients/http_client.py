@@ -34,7 +34,8 @@ class HttpClient:
         response.raise_for_status()
         return response.json()
 
-    def __add_correlation_id(self, headers):
+    @staticmethod
+    def __add_correlation_id(headers):
         if headers is None:
             headers = {"X-Request-ID": correlation_id.get() or ""}
         else:

@@ -62,9 +62,11 @@ class OcrService:
         result = EasyOcr(self.lang_list, self.gpu).predict_para_text(image_path)
         return result
 
-    def _read_image_object(self, path):
+    @staticmethod
+    def _read_image_object(path):
         return Image.open(path)
 
-    def _image_to_base64(self, image_path):
+    @staticmethod
+    def _image_to_base64(image_path):
         with open(image_path, 'rb') as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')

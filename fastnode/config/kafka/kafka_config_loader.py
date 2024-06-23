@@ -8,7 +8,8 @@ class KafkaConfigLoader:
     def __init__(self):
         self.config_path = self._determine_config_path()
 
-    def _determine_config_path(self) -> Path:
+    @staticmethod
+    def _determine_config_path() -> Path:
         env = os.getenv('APP_ENV', 'development').lower()  # Default to 'development' if unset
         current_dir = Path(__file__).parent
         config_filename = f"kafka_config_{env}.json"
