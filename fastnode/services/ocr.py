@@ -1,5 +1,4 @@
 import concurrent.futures
-import traceback
 from fastnode.clients.ocr import OCRClient
 from fastnode.logger.logger import logger
 

@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
 
-from fastnode.llms.base_llm import BaseLlm
-
 
 class Node(ABC):
     """Base Node class for each node in the graph."""
