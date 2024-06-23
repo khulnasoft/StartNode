@@ -3,7 +3,6 @@ from yolo.yolo.utils.box_utils import process_bounding_boxes
 from yolo.yolo.enums.model_type import ModelType
 import io
 from PIL import Image
-import numpy as np
 
 
 class YoloService:
