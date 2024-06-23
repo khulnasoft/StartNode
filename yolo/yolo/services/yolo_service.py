@@ -7,7 +7,7 @@ from PIL import Image
 
 class YoloService:
     def __init__(self, model_type: ModelType = ModelType.SAHI):
-        if model_type == ModelType.SAHI or model_type == ModelType.ULTRALYTICS:
+        if model_type in (ModelType.SAHI, ModelType.ULTRALYTICS):
             self.model_type = model_type
         else:
             raise Exception('No Model is configured. Please configure')
